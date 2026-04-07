@@ -1,19 +1,20 @@
 :root {
-  /* Logo-derived palette: olive/forest greens, warm khaki, gold accents */
   --forest-dark: #2c3a1e;
-  --forest-mid: #3d4f28;
-  --forest-light: #5a6e3a;
-  --olive: #6b7c3f;
+  --forest-deep: #232b18;
+  --forest-mid: #435330;
+  --forest-light: #607345;
+  --olive: #738752;
   --khaki: #c8b87a;
-  --gold: #c9a227;
-  --gold-light: #e8c84a;
-  --cream: #f5f0e0;
+  --gold: #c79f3c;
+  --gold-light: #e6c969;
+  --cream: #f3ecda;
   --warm-white: #faf7ef;
   --bark: #7a5c2e;
   --earth: #4a3520;
 
   --text-dark: #1e2410;
-  --text-mid: #3a4520;
+  --text-mid: #394228;
+  --text-muted: #59624a;
   --text-light: #f5f0e0;
 
   --section-pad: clamp(60px, 8vw, 120px);
@@ -31,10 +32,19 @@ html {
 }
 
 body {
+  margin: 0;
   font-family: 'Libre Baskerville', Georgia, serif;
   color: var(--text-dark);
   background: var(--forest-dark);
   overflow-x: hidden;
+}
+
+a,
+button,
+input,
+textarea,
+select {
+  -webkit-tap-highlight-color: transparent;
 }
 
 /* Scrollbar */
