@@ -625,8 +625,8 @@
 
   .hero__brandmark {
     order: -1;
-    justify-content: flex-start;
-    margin-top: 26px;
+    justify-content: center;
+    margin-top: 38px;
   }
 
   .hero__brandmark img {
@@ -682,12 +682,13 @@
 
 @media (max-width: 640px) {
   .hero__brandmark {
-    margin-top: 34px;
+    justify-content: center;
+    margin-top: 62px;
     margin-bottom: 6px;
   }
 
   .hero__brandmark img {
-    width: 140px;
+    width: 152px;
   }
 
   .hero__copy h1 {
