@@ -125,23 +125,23 @@
 
 .hero__backdrop {
   background:
-    linear-gradient(rgba(39, 47, 26, 0.28), rgba(39, 47, 26, 0.28)),
+    linear-gradient(rgba(78, 90, 58, 0.16), rgba(78, 90, 58, 0.16)),
     url('/background.jpg') center / cover no-repeat;
-  filter: sepia(0.38) saturate(0.6) hue-rotate(42deg) brightness(0.64) contrast(1.05);
+  filter: sepia(0.2) saturate(0.72) hue-rotate(28deg) brightness(0.84) contrast(0.98);
   transform: scale(1.08);
 }
 
 .hero__wash {
   background:
-    radial-gradient(circle at top right, rgba(218, 195, 120, 0.18), transparent 38%),
-    linear-gradient(135deg, rgba(17, 23, 13, 0.9), rgba(39, 47, 26, 0.74) 45%, rgba(17, 23, 13, 0.88));
+    radial-gradient(circle at top right, rgba(218, 195, 120, 0.16), transparent 38%),
+    linear-gradient(135deg, rgba(39, 47, 26, 0.5), rgba(70, 82, 49, 0.26) 45%, rgba(30, 37, 21, 0.54));
 }
 
 .hero__content {
   position: relative;
   z-index: 1;
   display: grid;
-  grid-template-columns: minmax(0, 1.2fr) minmax(280px, 0.8fr);
+  grid-template-columns: minmax(0, 1.35fr) minmax(220px, 0.65fr);
   gap: clamp(28px, 5vw, 70px);
   align-items: center;
   padding-top: 140px;
@@ -149,11 +149,21 @@
 }
 
 .hero__copy h1 {
-  max-width: 12ch;
+  max-width: 10ch;
   font-family: 'Playfair Display', serif;
-  font-size: clamp(2.8rem, 6vw, 5.5rem);
-  line-height: 1.02;
+  font-size: clamp(2.6rem, 4.8vw, 4.4rem);
+  line-height: 0.98;
   color: var(--warm-white);
+}
+
+.hero__title-detail {
+  max-width: 32ch;
+  margin-top: 14px;
+  font-family: 'Oswald', sans-serif;
+  font-size: clamp(0.92rem, 1.45vw, 1.14rem);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(250, 247, 239, 0.78);
 }
 
 .section-kicker {
@@ -232,18 +242,21 @@
 }
 
 .hero__logo-card {
-  padding: clamp(20px, 3vw, 28px);
-  border-radius: 32px;
-  background: linear-gradient(180deg, rgba(244, 238, 215, 0.18), rgba(244, 238, 215, 0.06));
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.24);
+  justify-self: end;
+  width: min(100%, 300px);
+  padding: 14px 0 0;
+  background: transparent;
+  border: 0;
+  box-shadow: none;
 }
 
 .hero__logo-card img {
   display: block;
   width: 100%;
-  max-width: 440px;
+  max-width: 300px;
   margin: 0 auto;
+  opacity: 0.92;
+  filter: drop-shadow(0 16px 28px rgba(0, 0, 0, 0.2));
 }
 
 .section {
@@ -256,7 +269,9 @@
 }
 
 .section--dark {
-  background: #242d1a;
+  background:
+    linear-gradient(rgba(41, 50, 29, 0.72), rgba(41, 50, 29, 0.78)),
+    url('/background.jpg') center / cover no-repeat;
 }
 
 .section--sand {
@@ -265,7 +280,7 @@
 
 .section--cta {
   background:
-    linear-gradient(rgba(34, 43, 21, 0.76), rgba(34, 43, 21, 0.88)),
+    linear-gradient(rgba(53, 65, 35, 0.52), rgba(34, 43, 21, 0.62)),
     url('/background.jpg') center / cover no-repeat;
   filter: none;
 }
@@ -274,8 +289,8 @@
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(circle at top left, rgba(218, 195, 120, 0.12), transparent 30%),
-    radial-gradient(circle at bottom right, rgba(88, 111, 59, 0.38), transparent 34%);
+    radial-gradient(circle at top left, rgba(218, 195, 120, 0.08), transparent 30%),
+    radial-gradient(circle at bottom right, rgba(122, 141, 93, 0.18), transparent 34%);
   pointer-events: none;
 }
 
@@ -364,10 +379,11 @@
 .service-card {
   min-height: 100%;
   padding: 30px;
-  background: rgba(250, 247, 239, 0.08);
-  border: 1px solid rgba(218, 195, 120, 0.22);
+  background: rgba(250, 247, 239, 0.1);
+  border: 1px solid rgba(218, 195, 120, 0.16);
   border-radius: 24px;
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.05);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(6px);
 }
 
 .service-card__category {
@@ -398,7 +414,7 @@
   min-height: 260px;
   border-radius: 30px;
   background:
-    linear-gradient(180deg, rgba(62, 78, 42, 0.94), rgba(35, 44, 22, 0.98)),
+    linear-gradient(180deg, rgba(73, 89, 52, 0.72), rgba(44, 54, 31, 0.78)),
     url('/background.jpg') center / cover no-repeat;
   color: var(--warm-white);
   box-shadow: 0 20px 44px rgba(36, 45, 26, 0.18);
@@ -431,9 +447,10 @@
 .cta-shell {
   padding: clamp(28px, 5vw, 44px);
   border-radius: 32px;
-  background: rgba(19, 24, 13, 0.62);
-  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(40, 49, 27, 0.48);
+  border: 1px solid rgba(255, 255, 255, 0.14);
   box-shadow: 0 24px 60px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(10px);
 }
 
 .cta-shell h2,
@@ -453,9 +470,10 @@
   padding: 26px;
   border-radius: 24px;
   text-decoration: none;
-  background: linear-gradient(180deg, rgba(244, 238, 215, 0.12), rgba(244, 238, 215, 0.05));
-  border: 1px solid rgba(218, 195, 120, 0.18);
+  background: linear-gradient(180deg, rgba(244, 238, 215, 0.16), rgba(244, 238, 215, 0.07));
+  border: 1px solid rgba(218, 195, 120, 0.16);
   color: var(--warm-white);
+  backdrop-filter: blur(8px);
 }
 
 .booking-card:hover,
@@ -568,6 +586,12 @@
   .hero__copy h1 {
     max-width: 14ch;
   }
+
+  .hero__logo-card {
+    justify-self: start;
+    width: min(240px, 60vw);
+    padding-top: 0;
+  }
 }
 
 @media (max-width: 780px) {
@@ -618,7 +642,7 @@
 
 @media (max-width: 640px) {
   .hero__copy h1 {
-    font-size: 2.45rem;
+    font-size: 2.3rem;
   }
 
   .hero__actions,

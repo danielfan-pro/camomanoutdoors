@@ -90,7 +90,8 @@ function Hero({ site }) {
       <div className="container hero__content">
         <div className="hero__copy">
           <p className="section-kicker">Licensed Guide Service</p>
-          <h1>{site.title}</h1>
+          <h1>Camo Man Outdoors</h1>
+          <p className="hero__title-detail">Licensed New York State Hunting and Fishing Guide</p>
           <p className="hero__slogan">{site.slogan}</p>
           <p className="hero__service-area">{site.serviceArea}</p>
           <div className="hero__actions">
@@ -108,7 +109,7 @@ function Hero({ site }) {
           </ul>
         </div>
 
-        <div className="hero__logo-card">
+        <div className="hero__logo-card" aria-hidden="true">
           <img src="/logo.png" alt="Camo Man Outdoors" />
         </div>
       </div>
