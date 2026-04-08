@@ -113,7 +113,7 @@ function Hero({ site }) {
         </div>
 
         <div className="hero__brandmark" aria-hidden="true">
-          <img src="/logo.png" alt="" />
+          <img src="/about.jpg" alt="" />
         </div>
       </div>
     </section>

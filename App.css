@@ -39,7 +39,7 @@
 }
 
 .nav__brand-mark {
-  width: 62px;
+  width: 84px;
   height: auto;
   filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.2));
 }
@@ -681,6 +681,10 @@
 }
 
 @media (max-width: 640px) {
+  .nav__brand-mark {
+    width: 72px;
+  }
+
   .hero__brandmark {
     justify-content: center;
     margin-top: 62px;
