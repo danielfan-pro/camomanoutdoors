@@ -536,15 +536,15 @@
   text-transform: uppercase;
 }
 
-.portfolio-panel h3,
-.portfolio-panel p {
-  max-width: 20ch;
-}
-
 .portfolio-panel p {
   margin-top: 10px;
   line-height: 1.7;
   color: rgba(250, 247, 239, 0.8);
+}
+
+.portfolio-panel h3,
+.portfolio-panel p {
+  max-width: 30ch;
 }
 
 .portfolio-panel__cta {

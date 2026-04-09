@@ -5,8 +5,7 @@ const GALLERIES = {
   '/portfolio/whitetail-deer': {
     title: 'Whitetail Deer',
     eyebrow: 'Whitetail Gallery',
-    intro:
-      'Seasonal deer photos will live here in a dedicated gallery so visitors can browse the full collection without crowding the homepage.',
+    intro: '',
     cta: 'mailto:camomanoutdoors@gmail.com?subject=Whitetail%20Deer%20Appointment%20Request',
     ctaLabel: 'Book a Whitetail Hunt',
     photos: [
@@ -34,8 +33,7 @@ const GALLERIES = {
   '/portfolio/inland-fishing': {
     title: 'Inland Fishing',
     eyebrow: 'Fishing Gallery',
-    intro:
-      'Open water and ice fishing photos will live here in a dedicated gallery with room to showcase the full catch collection.',
+    intro: '',
     cta: 'mailto:camomanoutdoors@gmail.com?subject=Inland%20Fishing%20Appointment%20Request',
     ctaLabel: 'Book a Fishing Trip',
     photos: [
@@ -611,7 +609,7 @@ function GalleryPage({ site, pathname }) {
           <div className="container gallery-hero__inner">
             <p className="section-kicker">{gallery.eyebrow}</p>
             <h1>{gallery.title}</h1>
-            <p className="gallery-hero__intro">{gallery.intro}</p>
+            {gallery.intro ? <p className="gallery-hero__intro">{gallery.intro}</p> : null}
             <div className="gallery-hero__actions">
               <button type="button" className="button button--primary" onClick={() => navigateTo('/')}>
                 Back to Home
@@ -627,7 +625,7 @@ function GalleryPage({ site, pathname }) {
           <div className="container">
             <div className="section-heading">
               <p className="section-kicker">Full Gallery</p>
-              <h2>{hasPhotos ? 'Tap any photo to expand it and browse the full set.' : 'Gallery layout is ready for your uploaded photos.'}</h2>
+              <h2>{hasPhotos ? 'Browse the full collection below.' : 'Gallery layout is ready for your uploaded photos.'}</h2>
               {!hasPhotos ? (
                 <p className="section-intro">
                   Once you send the photo collection, each image will appear here in a responsive grid with full-screen expansion, left and right navigation, and mobile-friendly browsing.
