@@ -10,10 +10,10 @@ const GALLERIES = {
     cta: 'mailto:camomanoutdoors@gmail.com?subject=Whitetail%20Deer%20Appointment%20Request',
     ctaLabel: 'Book a Whitetail Hunt',
     photos: [
-      { src: '/galleries/deer/img-3608.jpg', alt: 'Whitetail deer hunting photo 1', caption: 'Whitetail Deer Gallery' },
-      { src: '/galleries/deer/img-3744.jpg', alt: 'Whitetail deer hunting photo 2', caption: 'Whitetail Deer Gallery' },
-      { src: '/galleries/deer/img-3901.jpg', alt: 'Whitetail deer hunting photo 3', caption: 'Whitetail Deer Gallery' },
-      { src: '/galleries/deer/img-3915.jpg', alt: 'Whitetail deer hunting photo 4', caption: 'Whitetail Deer Gallery' },
+      { src: '/galleries/deer/img-3608-fixed.jpg', alt: 'Whitetail deer hunting photo 1', caption: 'Whitetail Deer Gallery' },
+      { src: '/galleries/deer/img-3744-fixed.jpg', alt: 'Whitetail deer hunting photo 2', caption: 'Whitetail Deer Gallery' },
+      { src: '/galleries/deer/img-3901-fixed.jpg', alt: 'Whitetail deer hunting photo 3', caption: 'Whitetail Deer Gallery' },
+      { src: '/galleries/deer/img-3915-fixed.jpg', alt: 'Whitetail deer hunting photo 4', caption: 'Whitetail Deer Gallery' },
       { src: '/galleries/deer/img-1172.jpeg', alt: 'Whitetail deer hunting photo 5', caption: 'Whitetail Deer Gallery' },
       { src: '/galleries/deer/img-1173.jpeg', alt: 'Whitetail deer hunting photo 6', caption: 'Whitetail Deer Gallery' },
       { src: '/galleries/deer/img-2421.jpg', alt: 'Whitetail deer hunting photo 7', caption: 'Whitetail Deer Gallery' },
@@ -40,8 +40,8 @@ const GALLERIES = {
     cta: 'mailto:camomanoutdoors@gmail.com?subject=Inland%20Fishing%20Appointment%20Request',
     ctaLabel: 'Book a Fishing Trip',
     photos: [
-      { src: '/galleries/fish/img-0156.jpg', alt: 'Inland fishing photo 1', caption: 'Inland Fishing Gallery' },
-      { src: '/galleries/fish/img-0170.jpg', alt: 'Inland fishing photo 2', caption: 'Inland Fishing Gallery' },
+      { src: '/galleries/fish/img-0156-fixed.jpg', alt: 'Inland fishing photo 1', caption: 'Inland Fishing Gallery' },
+      { src: '/galleries/fish/img-0170-fixed.jpg', alt: 'Inland fishing photo 2', caption: 'Inland Fishing Gallery' },
       { src: '/galleries/fish/img-0138.jpg', alt: 'Inland fishing photo 3', caption: 'Inland Fishing Gallery' },
       { src: '/galleries/fish/img-e6bc9120.jpg', alt: 'Inland fishing photo 4', caption: 'Inland Fishing Gallery' },
       { src: '/galleries/fish/img-2437.jpg', alt: 'Inland fishing photo 5', caption: 'Inland Fishing Gallery' },
@@ -202,15 +202,15 @@ function Hero({ site }) {
         <div className="hero__copy">
           <p className="section-kicker">Licensed Guide Service</p>
           <h1>Camo Man Outdoors</h1>
+          <p className="hero__slogan">
+            <span>Making Your Memories</span>
+            <strong>The Trophy</strong>
+          </p>
           <p className="hero__title-detail">
             Charles Florczyk - Licensed New York State Hunting and Fishing Guide #10023
           </p>
           <p className="hero__credential-detail">
             New York State DEC Certified Hunter Education Instructor for Archery &amp; Firearm
-          </p>
-          <p className="hero__slogan">
-            <span>Making Your Memories</span>
-            <strong>The Trophy</strong>
           </p>
           <p className="hero__service-area">{site.serviceArea}</p>
           <p className="hero__disclaimer">
@@ -629,11 +629,11 @@ function GalleryPage({ site, pathname }) {
             <div className="section-heading">
               <p className="section-kicker">Full Gallery</p>
               <h2>{hasPhotos ? 'Tap any photo to expand it and browse the full set.' : 'Gallery layout is ready for your uploaded photos.'}</h2>
-              <p className="section-intro">
-                {hasPhotos
-                  ? 'When a visitor clicks an image, it opens in a full-screen viewer with next and previous navigation.'
-                  : 'Once you send the photo collection, each image will appear here in a responsive grid with full-screen expansion, left and right navigation, and mobile-friendly browsing.'}
-              </p>
+              {!hasPhotos ? (
+                <p className="section-intro">
+                  Once you send the photo collection, each image will appear here in a responsive grid with full-screen expansion, left and right navigation, and mobile-friendly browsing.
+                </p>
+              ) : null}
             </div>
 
             {hasPhotos ? (
