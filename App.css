@@ -717,6 +717,8 @@
   }
 
   .hero .section-kicker {
+    display: block;
+    margin-top: 12px;
     text-align: center;
   }
 
@@ -728,7 +730,7 @@
     order: -1;
     justify-content: center;
     margin-top: 52px;
-    margin-bottom: 18px;
+    margin-bottom: 30px;
   }
 
   .hero__brandmark img {
@@ -790,7 +792,7 @@
   .hero__brandmark {
     justify-content: center;
     margin-top: 78px;
-    margin-bottom: 18px;
+    margin-bottom: 34px;
   }
 
   .hero__brandmark img {
