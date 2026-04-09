@@ -155,7 +155,6 @@ function Values() {
               className={`info-card reveal ${visible ? 'reveal--visible' : ''}`}
               style={{ transitionDelay: `${index * 90}ms` }}
             >
-              <p className="info-card__eyebrow">0{index + 1}</p>
               <h3>{item.title}</h3>
               <p>{item.body}</p>
             </article>
@@ -242,6 +241,79 @@ function Portfolio() {
   )
 }
 
+function BlogLinks() {
+  const [ref, visible] = useReveal()
+
+  const links = [
+    {
+      title: 'Husband and Wife Team Up to Take Two Deer During Bow Season',
+      source: 'NewYorkUpstate.com',
+      href: 'https://www.newyorkupstate.com/outdoors/2022/10/husband-and-wife-team-up-to-take-two-deer-during-bow-season.html?outputType=amp'
+    },
+    {
+      title: 'The $4,500 Fish: Cicero Angler Wins Big in Weekend Oneida Lake Walleye Derby',
+      source: 'Syracuse.com',
+      href: 'https://www.syracuse.com/outdoors/2021/05/the-4500-fish-cicero-angler-wins-big-in-weekend-oneida-lake-walleye-derby.html?outputType=amp'
+    },
+    {
+      title: 'Facebook Feature on Sandy Spencer Florczyk and Chuck\'s Bow Season Bucks',
+      source: 'Upstate NY Outdoors on Facebook',
+      href: 'https://www.facebook.com/upstatenyoutdoors/posts/sandy-spencer-florczyk-of-cicero-ny-and-her-husband-chuck-each-took-down-a-buck-/2042000922641222/'
+    },
+    {
+      title: 'Upstate Outdoors Photo Gallery',
+      source: 'NewYorkUpstate.com',
+      href: 'https://www.newyorkupstate.com/galleries/YP6A6SJO5VDPHIFA7QX232F4CU/'
+    },
+    {
+      title: 'Troutland 2021: Upstate NY Anglers Share Photos of Their Impressive Catches',
+      source: 'NewYorkUpstate.com',
+      href: 'https://www.newyorkupstate.com/outdoors/2021/04/troutland-2021-upstate-ny-anglers-share-photos-of-their-impressive-catches.html?outputType=amp'
+    },
+    {
+      title: 'Upstate NY Angler Reels in Two River Monsters Days Apart',
+      source: 'NewYorkUpstate.com',
+      href: 'https://www.newyorkupstate.com/outdoors/2022/07/upstate-ny-angler-reels-in-two-river-monsters-days-apart.html?outputType=amp'
+    },
+    {
+      title: 'Deer of the Day',
+      source: 'Newzjunky',
+      href: 'https://www.newzjunky.com/page-2-deer-of-the-day/'
+    }
+  ]
+
+  return (
+    <section id="news" className="section section--news">
+      <div className="container">
+        <div ref={ref} className={`section-heading reveal ${visible ? 'reveal--visible' : ''}`}>
+          <p className="section-kicker">In The News</p>
+          <h2>Articles, features, and outdoor coverage connected to Camo Man Outdoors.</h2>
+          <p className="section-intro">
+            Browse media features, outdoor stories, and published highlights for more background on the experiences behind the brand.
+          </p>
+        </div>
+
+        <div className="news-grid">
+          {links.map((link, index) => (
+            <a
+              key={link.href}
+              className={`news-card reveal ${visible ? 'reveal--visible' : ''}`}
+              style={{ transitionDelay: `${index * 70}ms` }}
+              href={link.href}
+              target="_blank"
+              rel="noreferrer"
+            >
+              <span className="news-card__source">{link.source}</span>
+              <strong>{link.title}</strong>
+              <span className="news-card__cta">Open Story</span>
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+  )
+}
+
 function GetStarted({ site }) {
   const [ref, visible] = useReveal()
 
@@ -321,6 +393,16 @@ function Footer({ site }) {
           <p className="footer__title">Contact</p>
           <a href={`mailto:${site.contactEmail}`}>{site.contactEmail}</a>
           <p>{site.serviceArea}</p>
+          <a
+            className="footer__social"
+            href="https://www.facebook.com/share/17Np1RGPYJ/?mibextid=wwXIfr"
+            target="_blank"
+            rel="noreferrer"
+            aria-label="Visit Camo Man Outdoors on Facebook"
+          >
+            <img src="/facebook-logo.svg" alt="" />
+            <span>Follow on Facebook</span>
+          </a>
         </div>
       </div>
     </footer>
@@ -391,6 +473,7 @@ export default function App() {
         <Values />
         <Offer offerings={site.offerings} />
         <Portfolio />
+        <BlogLinks />
         <GetStarted site={site} />
         <About />
       </main>
