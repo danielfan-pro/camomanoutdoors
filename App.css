@@ -169,9 +169,9 @@
 }
 
 .hero__copy h1 {
-  max-width: 12ch;
+  max-width: 16ch;
   font-family: 'Playfair Display', serif;
-  font-size: clamp(2.3rem, 4vw, 3.8rem);
+  font-size: clamp(2.1rem, 3.3vw, 3.2rem);
   line-height: 1.02;
   color: var(--warm-white);
 }
@@ -1055,6 +1055,11 @@
     justify-content: center;
     align-items: center;
     gap: 12px;
+    width: auto;
+    min-width: 0;
+    align-self: center;
+    padding: 12px 18px;
+    text-align: left;
   }
 
   .footer__social span {
