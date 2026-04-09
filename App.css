@@ -169,10 +169,10 @@
 }
 
 .hero__copy h1 {
-  max-width: 10ch;
+  max-width: 12ch;
   font-family: 'Playfair Display', serif;
-  font-size: clamp(2.6rem, 4.8vw, 4.4rem);
-  line-height: 0.98;
+  font-size: clamp(2.3rem, 4vw, 3.8rem);
+  line-height: 1.02;
   color: var(--warm-white);
 }
 
@@ -915,7 +915,7 @@
   }
 
   .hero__copy h1 {
-    max-width: 14ch;
+    max-width: 100%;
   }
 
   .hero__brandmark {
@@ -988,7 +988,7 @@
   .hero__brandmark {
     justify-content: center;
     margin-top: 78px;
-    margin-bottom: 34px;
+    margin-bottom: 24px;
   }
 
   .hero__brandmark img {
@@ -996,7 +996,7 @@
   }
 
   .hero__copy h1 {
-    font-size: 2.3rem;
+    font-size: 2.05rem;
   }
 
   .hero__title-detail,
@@ -1050,8 +1050,24 @@
     text-align: center;
   }
 
+  .footer__social {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .footer__social span {
+    width: auto;
+    margin: 0;
+  }
+
   .hero__highlights li {
     width: 100%;
+  }
+
+  .hero__highlights {
+    margin-bottom: 18px;
   }
 
   .button,
